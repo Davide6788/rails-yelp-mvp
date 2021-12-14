@@ -1,3 +1,9 @@
-<% @restaurants.each do |restaurant| %>
-    <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
+<div class="d-flex justify-content-around">
+  <% @restaurants.each do |restaurant| %>
+  <div class="flex-item">
+    <h2><%= restaurant.name %></h2>
+    <p><%= restaurant.address %></p>
+    <h6 class="btn btn-primary"><%= link_to "See details", restaurant_path(restaurant) %></h6>
+  </div>
   <% end %>
+</div>

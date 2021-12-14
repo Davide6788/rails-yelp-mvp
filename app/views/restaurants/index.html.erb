@@ -1,9 +1,19 @@
-<div class="d-flex justify-content-around">
-  <% @restaurants.each do |restaurant| %>
-  <div class="flex-item">
-    <h2><%= restaurant.name %></h2>
-    <p><%= restaurant.address %></p>
-    <h6 class="btn btn-primary"><%= link_to "See details", restaurant_path(restaurant) %></h6>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container">
+    <span class="navbar-brand mb-0 h1">Check all of our new restaurants</span>
+    <%= link_to "Add a restaurant", new_restaurant_path, class: "btn btn-outline-primary my-2 my-sm-0" %>
   </div>
-  <% end %>
+</nav>
+
+<div class="container">
+  <div class="d-flex justify-content-around">
+    <% @restaurants.each do |restaurant| %>
+    <div class="restaurant-card">
+      <img src="https://source.unsplash.com/200x100" alt="Restaurant pic">
+      <h2 class="restaurant-details"><%= restaurant.name %></h2>
+      <p class="restaurant-details"><%= restaurant.address %></p>
+      <%= link_to "See details", restaurant_path(restaurant), class: "btn btn-primary btn-block" %>
+    </div>
+    <% end %>
+  </div>
 </div>

@@ -9,7 +9,7 @@ puts "Cleaning database..."
 Restaurant.destroy_all
 
 puts "Creating restaurants..."
-dishoom = { name: "Dishoom", address: "7 Boundary St, London E2 7JE", phone_number: "555555555", category: "italian" }
+dishoom = { name: "Dishoom", address: "London", phone_number: "555555555", category: "italian" }
 big_mama = { name: "Big Mama", address: "Station F", phone_number: "555555555", category: "chinese" }
 surpriz = { name: "Surpriz", address: "Oberkampf", phone_number: "555555555", category: "japanese" }
 mcdo = { name: "Mcdonalds", address: "Menilmontant", phone_number: "555555555", category: "belgian" }

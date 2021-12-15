@@ -1,1 +1,21 @@
-<h2><%= @restaurant.name %></h2>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container">
+    <span class="navbar-brand mb-0 h1">Check all of our new restaurants</span>
+    <%= link_to "Add a review", new_restaurant_review_path(@restaurant), class: "btn btn-outline-primary my-2 my-sm-0" %>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="single-restaurant-card">
+    <h2><%= @restaurant.name %></h2>
+    <p><%= @restaurant.address %></p>
+    <p><%= @restaurant.phone_number %></p>
+    <p><%= @restaurant.category %></p>
+  </div>
+  <% @restaurant.reviews.each do |review| %>
+    <div class="review-card">
+      <p class="review-content"><%= review.content %></p>
+      <p class="review-rating"><%= review.rating %>/5</p>
+    </div>
+    <% end %>
+</div>
